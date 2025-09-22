@@ -6,7 +6,16 @@ function zipList(list1: unknown[], list2: unknown[]): unknown[] {
   return result;
 }
 
+function zipListTheFunctionalWay(list1: unknown[], list2: unknown[]): unknown[] {
+  const result: unknown[] = [];
+  list1.forEach((element, index) => {
+    result.push(element, list2[index]);
+  });
+  return result;
+}
+
 const LIST1 = ['a', 'b', 'c'];
 const LIST2 = [1, 2, 3];
 
 console.log(zipList(LIST1, LIST2)); // ['a', 1, 'b', 2, 'c', 3]
+console.log(zipListTheFunctionalWay(LIST1, LIST2));
